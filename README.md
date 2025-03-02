@@ -51,4 +51,6 @@ POST http://localhost:3000/solve
 Payload: {"password":"password_here"}
 Response: {"hashedPassword": "your_hashed_password"}
 
-Check **File** [main.go] for the completed code.
+Please check **main.go** for the completed solver.
+
+- t3rmed
