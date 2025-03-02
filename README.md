@@ -42,13 +42,49 @@ let n = new Uint8Array([217, 3, 161, 123, 53, 200, 206, 36, 143, 2, 220, 252, 24
     };
 ```
 
-## Creating a solver
+## Creating a Solver
 
-Using Golang, I created a solver hosted on an API for easy access to my other program. I can simply just post to http://localhost:3000/solve with the given password as a json parameter. 
+Using Golang, I created a solver hosted on an API for easy access to my other program. You can send a `POST` request to the `/solve` endpoint with the password as a JSON parameter.
 
-**Usage:**
+### **Usage**
+
+#### **Endpoint:**
+```
 POST http://localhost:3000/solve
-Payload: {"password":"password_here"}
-Response: {"hashedPassword": "your_hashed_password"}
+```
 
-Check **File** [main.go] for the completed code.
+#### **Request Payload:**
+```json
+{
+  "password": "password_here"
+}
+```
+
+#### **Response:**
+```json
+{
+  "hashedPassword": "your_hashed_password"
+}
+```
+
+### **Example using cURL**
+```sh
+curl -X POST "http://localhost:3000/solve" -H "Content-Type: application/json" -d '{"password":"my_secure_password"}'
+```
+
+### **Example using Python**
+```python
+import requests
+
+url = "http://localhost:3000/solve"
+payload = {"password": "my_secure_password"}
+response = requests.post(url, json=payload)
+
+print(response.json())  # {"hashedPassword": "your_hashed_password"}
+```
+
+## **Source Code**
+Check the **[main.go](main.go)** file for the complete implementation.
+
+---
+Developed with ❤️ by T3rmed.
