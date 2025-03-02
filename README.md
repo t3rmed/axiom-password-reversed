@@ -17,13 +17,13 @@ I began by examining JavaScript files in the `/_next/static/chunks` directory, s
 
 I found some references to the `b64password` string, but despite its 16,000+ lines of code, this file didn't provide clear clues about the password hashing process. However, further searching led me to another file:
 
-- **File:** 8668-ca4155b1854f344f.js
+- **File:** [8668-ca4155b1854f344f.js](https://axiom.trade/_next/static/chunks/8668-ca4155b1854f344f.js)
 
 This file contained the key to understanding the encryption process.
 
 ## Key Findings
 
-The following code snippet from `8668-ca4155b1854f344f.js` reveals the encryption logic:
+The following code snippet from [8668-ca4155b1854f344f.js](https://axiom.trade/_next/static/chunks/8668-ca4155b1854f344f.js) reveals the encryption logic:
 
 ```javascript
 var a = r(75927).Buffer; // creates a buffer
@@ -51,6 +51,4 @@ POST http://localhost:3000/solve
 Payload: {"password":"password_here"}
 Response: {"hashedPassword": "your_hashed_password"}
 
-Please check **main.go** for the completed solver.
-
-- t3rmed
+Check **File** [main.go] for the completed code.
